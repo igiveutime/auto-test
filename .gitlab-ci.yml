@@ -1,0 +1,21 @@
+stages:
+  - build
+
+# Используем образ с Docker CLI
+image: docker:stable
+
+# Запускаем службу Docker-in-Docker
+services:
+  - docker:dind
+
+
+build-docker-image:
+  stage: build
+  only:
+    - master
+
+  before_script:
+    - docker login -u magento -p ${NEXUS_PASSWORD} docker.rigla.ru
+  script:
+    - docker build -t docker.rigla.ru/${CI_PROJECT_TITLE}:${CI_COMMIT_BRANCH} .
+    - docker push docker.rigla.ru/${CI_PROJECT_TITLE}:${CI_COMMIT_BRANCH} 

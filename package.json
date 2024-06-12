@@ -1,0 +1,19 @@
+{
+  "name": "front-tests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.39.0",
+    "@types/node": "^20.8.6"
+  },
+  "scripts": {},
+  "dependencies": {
+    "date-fns": "^2.30.0",
+    "date-fns-tz": "^2.0.0",
+    "dotenv": "^16.3.1",
+    "form-data": "^4.0.0",
+    "node-fetch": "^3.3.2",
+    "shelljs": "^0.8.5"
+  }
+}
